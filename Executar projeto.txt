@@ -1,0 +1,41 @@
+Pré-Requesitos:
+- Ter instalado PHP(8.2.4), Composer e Xampp (MySql e Servidor Web (Apache))
+
+Passo a Passo:
+
+Clone o repositório:
+    https://github.com/LuisFelipeA/Contabilivre.git
+
+Abra a pasta do repositório pelo terminal
+    cd NotasFiscais
+
+Instale as dependências do Composer:
+    composer install
+        Caso de erro na hora de rodar o Composer install:
+            Abra o arquivo php.ini e remova o comentário ;extension=zipparaextension=zip
+
+Configure o arquivo .Env
+    renomear .env.exeample para .env
+    configurar banco conforme exemplo:
+
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=notasfiscais
+        DB_USERNAME=root
+        DB_PASSWORD=
+
+Gere uma chave de aplicação:
+    php artisan key:generate
+
+Ligar Apache e MySql
+    Abrir Xampp (caso esteja usando Xampp) e clicar em start
+
+Migre o banco de dados:
+    php artisan migrate
+
+Inicie o servidor de desenvolvimento:
+    php artisan serve
+
+Requisições postman
+    https://documenter.getpostman.com/view/30664639/2s9YRCXBjg
